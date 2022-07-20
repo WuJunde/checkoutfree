@@ -67,7 +67,7 @@ def nnplay(qurry, per_cont):
         del per_cont[del_cid]
     return cid
 
-with open(args.data_path,'r') as infile,open(args.out_path,'r') as outfile :
+with open(args.data_path,'r') as infile,open(args.out_path,'w') as outfile :
     snap_dict = json.load(infile)
     count = 0
     with tqdm(total=len(snap_dict), desc=f'progress', unit='piece') as pbar:
@@ -75,8 +75,6 @@ with open(args.data_path,'r') as infile,open(args.out_path,'r') as outfile :
             time, ori, fea, loc, label = v['time'],v['ori'],v['fea'],v['loc'],v['label']
             time, ori, fea, loc = float(time), np.array(json.loads(ori)), np.array(json.loads(fea)), np.array(json.loads(loc))
             qurry = pers(idy, time, fea, loc, ori, label)
-            qurry.set_id(count)
-            per_cont.append(qurry)
             csg_per, link_map = construct_csg(qurry, per_cont)
             if csg_per == None:
                 cid = nnplay(qurry, per_cont)
