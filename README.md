@@ -1,5 +1,5 @@
 # PyPanops
-The project is a python implementation of the person clustering algorithm in the check-out free grocery visual system. Details of the algorithm are introduced in the paper "An Efficient Person Clustering Algorithm for Open Checkout-free Groceries". A large real-world dataset is released with project.
+The project is a python implementation of the person clustering algorithm in the check-out free grocery visual system. Details of the algorithm are introduced in the paper [An Efficient Person Clustering Algorithm for Open Checkout-free Groceries](https://arxiv.org/abs/2208.02973). A large real-world dataset is released with project.
 
 
 ## Dataset Download
